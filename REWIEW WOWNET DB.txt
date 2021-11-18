@@ -1,1 +1,7 @@
-S
+Meta data là những thông tin miêu tả về cấu trúc của data.  Siêu dữ liệu metadata là dạng dữ liệu miêu tả về dữ liệu. 
+Trong kho dữ liệu, metadata là dạng định nghĩa dữ liệu như: Bảng, cột, một báo cáo,....
+
+Metadata phải chứa các thông tin  :
+Cấu trúc của dữ liệu
+Thuật toán sử dụng để tổng hợp dữ liệu
+Ánh xạ xác định sự tương ứng dữ liệu từ môi trường tác nghiệp sang kho dữ liệu
