@@ -1,0 +1,126 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset163 Calibri;}{\f2\fnil\fcharset238 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs22\lang9 1. IF ELSE \b0\par
+Trong Oracle, c\'e2u l\f1\lang1066\u7879?nh IF-THEN-ELSE \f2\'f0\u432?\f1\u7907?c s\u7917? d\u7909?ng \f2\'f0\f1\u7875? th\u7921?c thi m\f0\lang1033\'e3 khi m\f1\lang1066\u7897?t \f2\'f0i\f1\u7873?u ki\u7879?n l\f0\lang1033\'e0 TRUE ho\f1\lang1066\u7863?c th\u7921?c thi m\f0\lang1033\'e3 kh\'e1c n\f1\lang1066\u7871?u \f2\'f0i\f1\u7873?u ki\u7879?n cho gi\f0\lang1033\'e1 tr\f1\lang1066\u7883? FALSE.\f0\lang9\par
+\b C\'fa ph\'e1p\b0\par
+C\'f3 c\'e1c c\'fa ph\'e1p kh\'e1c nhau cho c\'e2u l\f1\lang1066\u7879?nh IF-THEN-ELSE.\par
+\par
+\b C\f0\lang1033\'fa ph\'e1p (IF-THEN)\b0\par
+C\'fa ph\'e1p cho IF-THEN trong Oracle / PLSQL l\'e0:\par
+\par
+IF condition THEN\par
+   \{...statements to execute when condition is TRUE...\}\par
+END IF;\par
+B\f1\lang1066\u7841?n s\u7917? d\u7909?ng c\f0\lang1033\'fa ph\'e1p IF-THEN, khi b\f1\lang1066\u7841?n ch\u7881? mu\u7889?n th\u7921?c hi\u7879?n c\f0\lang1033\'e1c c\'e2u l\f1\lang1066\u7879?nh khi \f2\'f0i\f1\u7873?u ki\u7879?n l\f0\lang1033\'e0 \f2\'d0\f0\'daNG.\par
+\par
+\b C\'fa ph\'e1p (IF-THEN-ELSE)\b0\par
+C\'fa ph\'e1p cho IF-THEN-ELSE trong Oracle / PLSQL l\'e0:\par
+\par
+IF condition THEN\par
+   \{...statements to execute when condition is TRUE...\}\par
+\par
+ELSE\par
+   \{...statements to execute when condition is FALSE...\}\par
+\par
+END IF;\par
+B\f1\lang1066\u7841?n s\u7917? d\u7909?ng c\f0\lang1033\'fa ph\'e1p IF-THEN-ELSE, khi b\f1\lang1066\u7841?n mu\u7889?n th\u7921?c hi\u7879?n m\u7897?t nh\f0\lang1033\'f3m c\'e2u l\f1\lang1066\u7879?nh khi \f2\'f0i\f1\u7873?u ki\u7879?n l\f0\lang1033\'e0 TRUE ho\f1\lang1066\u7863?c m\u7897?t nh\f0\lang1033\'f3m c\'e2u l\f1\lang1066\u7879?nh kh\f0\lang1033\'e1c khi \f2\'f0i\f1\lang1066\u7873?u ki\u7879?n l\f0\lang1033\'e0 FALSE.\par
+\par
+\b C\'fa ph\'e1p (IF-THEN-ELSIF)\b0\par
+C\'fa ph\'e1p cho IF-THEN-ELSIF trong Oracle / PLSQL l\'e0:\par
+\par
+IF condition1 THEN\par
+   \{...statements to execute when condition1 is TRUE...\}\par
+\par
+ELSIF condition2 THEN\par
+   \{...statements to execute when condition1 is FALSE and condition2 is TRUE...\}\par
+\par
+END IF;\par
+B\f1\lang1066\u7841?n s\u7917? d\u7909?ng c\f0\lang1033\'fa ph\'e1p IF-THEN-ELSIF, khi b\f1\lang1066\u7841?n mu\u7889?n th\u7921?c hi\u7879?n m\u7897?t t\u7853?p h\u7907?p c\f0\lang1033\'e1c c\'e2u l\f1\lang1066\u7879?nh khi \f2\'f0i\f1\u7873?u ki\u7879?n 1 l\f0\lang1033\'e0 \f2\'d0\f0\'daNG ho\f1\lang1066\u7863?c m\u7897?t t\u7853?p h\u7907?p c\f0\lang1033\'e1c c\'e2u l\f1\lang1066\u7879?nh kh\f0\lang1033\'e1c khi \f2\'f0i\f1\lang1066\u7873?u ki\u7879?n 2 l\f0\lang1033\'e0 \f2\'d0\f0\'daNG.\par
+\par
+\b C\'fa ph\'e1p (IF-THEN-ELSIF-ELSE)\b0\par
+C\'fa ph\'e1p cho IF-THEN-ELSIF-ELSE trong Oracle / PLSQL l\'e0:\par
+\par
+IF condition1 THEN\par
+   \{...statements to execute when condition1 is TRUE...\}\par
+\par
+ELSIF condition2 THEN\par
+   \{...statements to execute when condition1 is FALSE and condition2 is TRUE...\}\par
+\par
+ELSE\par
+   \{...statements to execute when both condition1 and condition2 are FALSE...\}\par
+\par
+END IF;\par
+B\f1\lang1066\u7841?n s\u7917? d\u7909?ng c\f0\lang1033\'fa ph\'e1p IF-THEN-ELSIF-ELSE, khi b\f1\lang1066\u7841?n mu\u7889?n th\u7921?c hi\u7879?n m\u7897?t t\u7853?p h\u7907?p c\f0\lang1033\'e1c c\'e2u l\f1\lang1066\u7879?nh khi \f2\'f0i\f1\u7873?u ki\u7879?n 1 l\f0\lang1033\'e0 \f2\'d0\f0\'daNG, m\f1\lang1066\u7897?t t\u7853?p h\u7907?p c\f0\lang1033\'e1c c\'e2u l\f1\lang1066\u7879?nh kh\f0\lang1033\'e1c khi \f2\'f0i\f1\lang1066\u7873?u ki\u7879?n 2 l\f0\lang1033\'e0 \f2\'d0\f0\'daNG ho\f1\lang1066\u7863?c m\u7897?t t\u7853?p h\u7907?p c\f0\lang1033\'e1c c\'e2u l\f1\lang1066\u7879?nh kh\f0\lang1033\'e1c khi t\f1\lang1066\u7845?t c\u7843? c\f0\lang1033\'e1c \f2\'f0i\f1\lang1066\u7873?u ki\u7879?n tr\f2\u432?\f1\u7899?c \f2\'f0\f0\lang1033\'f3 (v\'ed d\f1\lang1066\u7909?: \f2\'f0i\f1\u7873?u ki\u7879?n1 v\f0\lang1033\'e0 \f2\'f0i\f1\lang1066\u7873?u ki\u7879?n 2 ) l\f0\lang1033\'e0 FALSE.\par
+\par
+\b Ghi ch\'fa\b0\par
+Khi m\f1\lang1066\u7897?t \f2\'f0i\f1\u7873?u ki\u7879?n \f2\'f0\u432?\f1\u7907?c t\f0\lang1033\'ecm th\f1\lang1066\u7845?y l\f0\lang1033\'e0 TRUE, c\'e2u l\f1\lang1066\u7879?nh IF-THEN-ELSE s\u7869? th\u7921?c thi m\f0\lang1033\'e3 t\f2\u432?\u417?ng \f1\lang1066\u7913?ng v\f0\lang1033\'e0 kh\'f4ng \f2\'f0\f0\'e1nh gi\'e1 c\'e1c \f2\'f0i\f1\lang1066\u7873?u ki\u7879?n n\u7919?a.\par
+N\u7871?u kh\f0\lang1033\'f4ng c\'f3 \f2\'f0i\f1\lang1066\u7873?u ki\u7879?n n\f0\lang1033\'e0o \f2\'f0\u432?\f1\lang1066\u7907?c \f2\'f0\f0\lang1033\'e1p \f1\lang1066\u7913?ng, ph\u7847?n ELSE c\u7911?a c\f0\lang1033\'e2u l\f1\lang1066\u7879?nh IF-THEN-ELSE s\u7869? \f2\'f0\u432?\f1\u7907?c th\u7921?c thi.\par
+\f2\'d0i\f1\u7873?u quan tr\u7885?ng c\u7847?n l\f2\u432?u \f0\lang1033\'fd l\'e0 c\'e1c ph\f1\lang1066\u7847?n ELSIF v\f0\lang1033\'e0 ELSE l\'e0 t\'f9y ch\f1\lang1066\u7885?n.\par
+\b Th\f0\lang1033\'ed d\f1\lang1066\u7909?\b0\par
+Sau \f2\'f0\f0\lang1033\'e2y l\'e0 v\'ed d\f1\lang1066\u7909? s\u7917? d\u7909?ng c\f0\lang1033\'e2u l\f1\lang1066\u7879?nh IF-THEN-ELSE trong m\u7897?t h\f0\lang1033\'e0m Oracle:\par
+\par
+\b\i CREATE OR REPLACE Function IncomeLevel\par
+   ( name_in IN varchar2 )\par
+   RETURN varchar2\par
+IS\par
+   monthly_value number(6);\par
+   ILevel varchar2(20);\par
+   cursor c1 is\par
+     SELECT monthly_income\par
+     FROM employees\par
+     WHERE name = name_in;\par
+BEGIN\par
+   open c1;\par
+   fetch c1 into monthly_value;\par
+   close c1;\par
+   IF monthly_value <= 4000 THEN\par
+      ILevel := 'Low Income';\par
+   ELSIF monthly_value > 4000 and monthly_value <= 7000 THEN\par
+      ILevel := 'Avg Income';\par
+   ELSIF monthly_value > 7000 and monthly_value <= 15000 THEN\par
+      ILevel := 'Moderate Income';\par
+   ELSE\par
+      ILevel := 'High Income';\par
+   END IF;\par
+   RETURN ILevel;\par
+END;\par
+\b0\i0 Trong v\'ed d\f1\lang1066\u7909? v\u7873? c\f0\lang1033\'e2u l\f1\lang1066\u7879?nh IF-THEN-ELSE n\f0\lang1033\'e0y, ch\'fang t\'f4i \f2\'f0\f0\'e3 t\f1\lang1066\u7841?o m\u7897?t h\f0\lang1033\'e0m c\'f3 t\'ean l\'e0 IncomeLevel. N\'f3 c\'f3 m\f1\lang1066\u7897?t tham s\u7889? g\u7885?i l\f0\lang1033\'e0 name_in v\'e0 n\'f3 tr\f1\lang1066\u7843? v\u7873? m\u7897?t varchar2. H\f0\lang1033\'e0m s\f1\lang1066\u7869? tr\u7843? v\u7873? m\u7913?c thu nh\u7853?p d\u7921?a tr\f0\lang1033\'ean t\'ean c\f1\lang1066\u7911?a nh\f0\lang1033\'e2n vi\'ean.\par
+\par
+Trong Oracle, FOR LOOP cho ph\'e9p b\f1\lang1066\u7841?n th\u7921?c thi m\f0\lang1033\'e3 l\f1\lang1066\u7863?p l\u7841?i trong m\u7897?t s\u7889? l\u7847?n c\u7889? \f2\'f0\f1\u7883?nh.\par
+\b\f0\lang1033 2. FOR LOOP\par
+\b0 Trong Oracle, FOR LOOP cho ph\'e9p b\f1\lang1066\u7841?n th\u7921?c thi m\f0\lang1033\'e3 l\f1\lang1066\u7863?p l\u7841?i trong m\u7897?t s\u7889? l\u7847?n c\u7889? \f2\'f0\f1\u7883?nh.\par
+\b C\f0\lang1033\'fa ph\'e1p cho V\'f2ng l\f1\lang1066\u7863?p FOR trong Oracle / PLSQL l\f0\lang1033\'e0:\b0\par
+\b\par
+\b0 FOR loop_counter IN [REVERSE] lowest_number..highest_number\par
+LOOP\par
+   \{...statements...\}\par
+END LOOP;\par
+Tham s\f1\lang1066\u7889? ho\u7863?c \f2\'f0\f1\u7889?i s\u7889?\par
+loop_counter\par
+Bi\u7871?n \f2\'f0\f1\u7871?m v\f0\lang1033\'f2ng l\f1\lang1066\u7863?p.\par
+\f2\'d0\f1\u7842?O NG\f2\u431?\f1\u7906?C\par
+Kh\f0\lang1033\'f4ng b\f1\lang1066\u7855?t bu\u7897?c. N\u7871?u \f2\'f0\u432?\f1\u7907?c ch\u7881? \f2\'f0\f1\u7883?nh, b\u7897? \f2\'f0\f1\u7871?m v\f0\lang1033\'f2ng l\f1\lang1066\u7863?p s\u7869? \f2\'f0\f1\u7871?m ng\f2\u432?\f1\u7907?c l\u7841?i.\par
+s\u7889?_th\u7845?p nh\u7845?t\par
+Gi\f0\lang1033\'e1 tr\f1\lang1066\u7883? b\u7855?t \f2\'f0\f1\u7847?u cho loop_counter .\par
+cao nh\u7845?t\par
+Gi\f0\lang1033\'e1 tr\f1\lang1066\u7883? k\u7871?t th\f0\lang1033\'fac cho loop_counter .\par
+c\'e1c c\'e2u l\f1\lang1066\u7879?nh\par
+C\f0\lang1033\'e1c c\'e2u l\f1\lang1066\u7879?nh \f2\'f0\f1\u7875? th\u7921?c thi m\u7895?i l\u7847?n \f2\'f0i qua v\f0\lang1033\'f2ng l\f1\lang1066\u7863?p.\par
+\b Ghi ch\f0\lang1033\'fa\par
+\b0 B\f1\lang1066\u7841?n s\u7869? s\u7917? d\u7909?ng FOR LOOP khi b\u7841?n mu\u7889?n th\u7921?c thi ph\u7847?n th\f0\lang1033\'e2n c\f1\lang1066\u7911?a v\f0\lang1033\'f2ng l\f1\lang1066\u7863?p v\u7899?i m\u7897?t s\u7889? l\u7847?n c\u7889? \f2\'f0\f1\u7883?nh.\par
+N\u7871?u REVERSE \f2\'f0\u432?\f1\u7907?c ch\u7881? \f2\'f0\f1\u7883?nh, th\f0\lang1033\'ec highest_number s\f1\lang1066\u7869? l\f0\lang1033\'e0 gi\'e1 tr\f1\lang1066\u7883? kh\u7903?i \f2\'f0\f1\u7847?u cho loop_counter v\f0\lang1033\'e0 lowest_number s\f1\lang1066\u7869? l\f0\lang1033\'e0 gi\'e1 tr\f1\lang1066\u7883? k\u7871?t th\f0\lang1033\'fac cho loop_counter .\par
+\b Th\'ed d\f1\lang1066\u7909?\par
+\b0 H\f0\lang1033\'e3y xem m\f1\lang1066\u7897?t v\f0\lang1033\'ed d\f1\lang1066\u7909? v\u7873? c\f0\lang1033\'e1ch s\f1\lang1066\u7917? d\u7909?ng FOR LOOP trong Oracle.\par
+\b FOR Lcntr IN 1..20\par
+LOOP\par
+   LCalc := Lcntr * 31;\par
+END LOOP;\par
+\b0 V\f0\lang1033\'ed d\f1\lang1066\u7909? FOR LOOP n\f0\lang1033\'e0y s\f1\lang1066\u7869? l\u7863?p l\u7841?i 20 l\u7847?n. B\u7897? \f2\'f0\f1\u7871?m c\f0\lang1033\'f3 t\'ean Lcntr s\f1\lang1066\u7869? b\u7855?t \f2\'f0\f1\u7847?u l\f0\lang1033\'fac 1 v\'e0 k\f1\lang1066\u7871?t th\f0\lang1033\'fac l\'fac 20.\par
+B\f1\lang1066\u7841?n c\f0\lang1033\'f3 th\f1\lang1066\u7875? s\u7917? d\u7909?ng c\f0\lang1033\'f4ng c\f1\lang1066\u7909? s\u7917?a \f2\'f0\f1\u7893?i REVERSE \f2\'f0\f1\u7875? ch\u7841?y FOR LOOP theo th\u7913? t\u7921? ng\f2\u432?\f1\u7907?c l\u7841?i. V\f0\lang1033\'ed d\f1\lang1066\u7909?:\par
+\b FOR Lcntr IN REVERSE 1..15\par
+LOOP\par
+   LCalc := Lcntr * 31;\par
+END LOOP;\par
+\b0 V\f0\lang1033\'ed d\f1\lang1066\u7909? FOR LOOP n\f0\lang1033\'e0y s\f1\lang1066\u7869? l\u7863?p l\u7841?i 15 l\u7847?n. Tuy nhi\f0\lang1033\'ean, v\'ec REVERSE \f2\'f0\u432?\f1\lang1066\u7907?c ch\u7881? \f2\'f0\f1\u7883?nh, b\u7897? \f2\'f0\f1\u7871?m \f2\'f0\u432?\f1\u7907?c g\u7885?i l\f0\lang1033\'e0 Lcntr s\f1\lang1066\u7869? b\u7855?t \f2\'f0\f1\u7847?u \u7903? 15 v\f0\lang1033\'e0 k\f1\lang1066\u7871?t th\f0\lang1033\'fac \f1\lang1066\u7903? 1 (v\u7873? b\u7843?n ch\u7845?t l\f0\lang1033\'e0 l\f1\lang1066\u7863?p ng\f2\u432?\f1\u7907?c l\u7841?i).\f0\lang9\par
+}
+ 
