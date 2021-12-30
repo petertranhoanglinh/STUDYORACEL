@@ -1,0 +1,80 @@
+@Override
+	public List<ZipcodeDto> getAll(String searchName, int page, int len) throws Exception {
+		
+		String encode = URLEncoder.encode(searchName,"euc-kr");//"세종특별자치시 연서면 아홉거리길"
+		String urlk = "https://biz.epost.go.kr/KpostPortal/openapi?regkey=1c14d0a1b87357fbb1434350282373&target=postNew&query="+encode+"&countPerPage=" + len + "&currentPage=" + page;
+		
+		//String encode = URLEncoder.encode("세종특별자치시 연서면 아홉거리길","euc-kr");
+		//url.replace("XXXX", encode);
+		
+	
+	      HttpURLConnection conn = null;
+	        
+	        try{
+	            
+	            
+	            String query = urlk;
+	            
+	            URL url = new URL(query);
+	            conn = (HttpURLConnection) url.openConnection();
+	            conn.setRequestProperty("accept-language","ko");
+	            
+	            DocumentBuilder docBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+	            byte[] bytes = new byte[4096];
+	            InputStream in = conn.getInputStream();
+	            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+	            while(true){
+	                int red = in.read(bytes);
+	                if(red < 0)
+	                    break;
+	                baos.write(bytes, 0, red);
+	            }
+	            String xmlData = baos.toString("UTF-8");
+	            baos.close();
+	            in.close();
+	            conn.disconnect();
+	            
+	           
+	            Document doc = docBuilder.parse(new InputSource(new StringReader(xmlData)));
+	            Element el = (Element)doc.getElementsByTagName("itemlist").item(0);
+	            
+	            addressInfos = new ArrayList<>();
+	            if(el!=null){
+		            for(int i=0; i<el.getChildNodes().getLength(); i++){
+		                Node node = el.getChildNodes().item(i); 
+		                if(!node.getNodeName().equals("item")){
+		                    continue;
+		                }
+		                String address = node.getChildNodes().item(1).getFirstChild().getNodeValue();
+		                String post = node.getChildNodes().item(3).getFirstChild().getNodeValue();
+		                String jibun = node.getChildNodes().item(5).getFirstChild().getNodeValue();
+		                
+		                
+		                 ZipcodeDto data = new ZipcodeDto();
+		                 
+		                 data.setAddress(address);
+		                 data.setZipCode(post);
+		                 data.setJibun(jibun);
+		    			
+		    			addressInfos.add(data);
+		            }
+		            
+		            if(doc!=null){
+			            for(int i=0; i<doc.getChildNodes().getLength(); i++){
+			            	Node node = doc.getChildNodes().item(i);
+			            	
+			            	if(node.getNodeName().equals("error")){
+			            		logger.debug("errorChk:1");
+			            	}
+			            }
+		            }
+	            }
+	            }catch(Exception e){
+	                //e.printStackTrace();
+	                logger.debug("★★★★★★★★★★★★★★★★★★★★★★★★★★★error:"+e);
+	            }finally{
+	                try{if(conn != null) conn.disconnect(); } catch(Exception e){}
+	            }
+	            
+				return addressInfos;        
+	}
