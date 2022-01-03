@@ -1,0 +1,29 @@
+-- Trigger: tr_log_deleteuser
+
+-- DROP TRIGGER tr_log_deleteuser ON public.users;
+
+CREATE TRIGGER tr_log_deleteuser
+    BEFORE DELETE
+    ON public.users
+    FOR EACH ROW
+    EXECUTE FUNCTION public.logdeleteuser();
+
+-- Trigger: tr_log_insertuser
+
+-- DROP TRIGGER tr_log_insertuser ON public.users;
+
+CREATE TRIGGER tr_log_insertuser
+    BEFORE INSERT
+    ON public.users
+    FOR EACH ROW
+    EXECUTE FUNCTION public.lognewuser();
+
+-- Trigger: tr_log_user
+
+-- DROP TRIGGER tr_log_user ON public.users;
+
+CREATE TRIGGER tr_log_user
+    BEFORE UPDATE 
+    ON public.users
+    FOR EACH ROW
+    EXECUTE FUNCTION public.loginsertuser();
