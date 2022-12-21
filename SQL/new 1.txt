@@ -1,0 +1,10 @@
+cashrcptType        VARCHAR2(20 CHAR),
+  cashrcptNum         VARCHAR2(20 CHAR)
+  
+  
+  
+  DROP TYPE NATURESLEEP.TBL_4230;
+
+CREATE OR REPLACE TYPE NATURESLEEP."TBL_4230"                                                                                                                                                                                                                                     
+AS TABLE OF OBJ_4230; 
+/

@@ -1,0 +1,5 @@
+DROP TYPE ALLSPRINGLAND.TBL_4230;
+
+CREATE OR REPLACE TYPE ALLSPRINGLAND."TBL_4230"                                                                                                                                                            
+AS TABLE OF OBJ_4230;
+/

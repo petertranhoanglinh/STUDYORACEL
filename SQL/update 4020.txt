@@ -1,0 +1,83 @@
+/* -------------------------------------------------------------------------- */
+/* Package Member : Ord_Money_Add_SP [Update]                                 */
+/* Work    Date   : 2022-09-23 Created by Binh                                */
+/* -------------------------------------------------------------------------- */
+PROCEDURE Ord_Money_Add_SP (
+  SP_COM_ID             IN VARCHAR2, --    NOT NULL 회사번호 (Company.Com_ID) S？ cong ty (Company.Com_ID)
+  SP_MONEY_NO           IN VARCHAR2, --    NOT NULL 입금번호(YYMMDD-HHMISS- + 시퀀스3자리. 총 17자리) S？ ti？n g？i (YYMMDD-HHMISS- + day 3 ch？ s？, t？ng s？ 17 ch？ s？)
+  SP_SEQ                IN NUMBER,   --    NOT NULL 결제순번 (SEQ_Tmp 시퀀스 사용) Th？ t？ thanh toan (SEQ_Tmp) S？ d？ng th？ t？)
+  SP_Cashrcpt_Num       IN VARCHAR2, --        NULL 현금영수증 발행번호
+  SP_Cashrcpt_Type      IN VARCHAR2, --        NULL 현금영수증 발행구분
+  SP_WORK_USER          IN VARCHAR2, --    NOT NULL 작업자번호 ID ng？？i lam vi？c
+  ------------------------------------------------------------------------------
+  SP_RetCode            OUT VARCHAR2, -- [리턴값] 결과코드
+  SP_RetStr             OUT VARCHAR2  -- [리턴값] 결과내용
+  ------------------------------------------------------------------------------
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/* Package Member : Ord_Money_Add_SP [Update]                                 */
+/* Work    Date   : 2022-09-23 Created by Binh                                */
+/* -------------------------------------------------------------------------- */
+PROCEDURE Ord_Money_Add_SP (
+  SP_COM_ID             IN VARCHAR2, --    NOT NULL 회사번호 (Company.Com_ID) S？ cong ty (Company.Com_ID)
+  SP_MONEY_NO           IN VARCHAR2, --    NOT NULL 입금번호(YYMMDD-HHMISS- + 시퀀스3자리. 총 17자리) S？ ti？n g？i (YYMMDD-HHMISS- + day 3 ch？ s？, t？ng s？ 17 ch？ s？)
+  SP_SEQ                IN NUMBER,   --    NOT NULL 결제순번 (SEQ_Tmp 시퀀스 사용) Th？ t？ thanh toan (SEQ_Tmp) S？ d？ng th？ t？)
+  SP_Cashrcpt_Num       IN VARCHAR2, --        NULL 현금영수증 발행번호
+  SP_Cashrcpt_Type      IN VARCHAR2, --        NULL 현금영수증 발행구분
+  SP_WORK_USER          IN VARCHAR2, --    NOT NULL 작업자번호 ID ng？？i lam vi？c
+  ------------------------------------------------------------------------------
+  SP_RetCode            OUT VARCHAR2, -- [리턴값] 결과코드
+  SP_RetStr             OUT VARCHAR2  -- [리턴값] 결과내용
+  ------------------------------------------------------------------------------
+)
+IS
+  vLang_CD              VARCHAR2(2); -- 담당자 사용언어코드 (Country.CTR_CD) Ma ngon ng？ s？ d？ng cho ng？？i ph？ trach
+  vPathCd               VARCHAR2(5);
+BEGIN
+  SELECT Lang_CD INTO vLang_CD
+    FROM SM_User
+   WHERE Com_ID = SP_Com_ID
+     AND Userid = SP_Work_User;
+    
+    --SELECT NVL(MAX(Ctr_Cd),'KR') INTO vLang_CD
+    --  FROM Member
+    -- WHERE Com_ID = SP_Com_ID
+    --   AND Userid = SP_Work_User; 
+       
+  UPDATE Ord_Money
+     SET Cashrcpt_Num  = SP_Cashrcpt_Num
+       , Cashrcpt_Type = SP_Cashrcpt_Type
+   WHERE Com_ID = SP_Com_ID
+     AND Money_No = SP_Money_No
+     AND SEQ = SP_SEQ;
+
+  SP_RetCode := 'OK';
+  SP_RetStr  := ufMessage('정상적으로 저장되었습니다.', vLang_CD);
+  COMMIT;
+
+--------------------------------------------------------------------------------
+-- 예외처리 X？ ly ngo？i l？
+--------------------------------------------------------------------------------
+EXCEPTION
+  WHEN OTHERS THEN
+    SP_RetCode := SUBSTR(SQLERRM,  1,  9);
+    SP_RetStr  := SUBSTR(SQLERRM, 12,100);
+    ROLLBACK;
+END;
+/* -------------------------------------------------------------------------- */
+/* Package Member : Ord_Money_Add_SP [Update] - END -                         */
+/* -------------------------------------------------------------------------- */
